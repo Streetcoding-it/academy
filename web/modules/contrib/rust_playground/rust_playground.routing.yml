@@ -1,0 +1,8 @@
+rust_playground.execute:
+  path: '/rust-playground'
+  defaults:
+    _controller: 'Drupal\rust_playground\Controller\RustPlaygroundController::content'
+    _title: 'Rust Playground'
+  requirements:
+    _permission: 'access content'
+

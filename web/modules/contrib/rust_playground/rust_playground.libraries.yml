@@ -1,0 +1,7 @@
+ace_editor:
+  version: 1.x
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js: { type: external, minified: true }
+    js/ace_init.js: {}
+  dependencies:
+    - core/jquery

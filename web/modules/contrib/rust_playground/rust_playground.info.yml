@@ -1,0 +1,9 @@
+name: 'Rust Playground'
+type: module
+description: 'Modulo per eseguire codice Rust da un form.'
+core_version_requirement: ^10
+package: Contrib
+dependencies:
+  - drupal:field
+  - drupal:system
+  - drupal:block
