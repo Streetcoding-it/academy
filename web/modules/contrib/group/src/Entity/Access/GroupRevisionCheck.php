@@ -63,7 +63,7 @@ class GroupRevisionCheck implements AccessInterface {
    * @return \Drupal\Core\Access\AccessResultInterface
    *   The access result.
    */
-  public function access(Route $route, AccountInterface $account, RouteMatchInterface $route_match = NULL) {
+  public function access(Route $route, AccountInterface $account, ?RouteMatchInterface $route_match = NULL) {
     if (empty($route_match)) {
       $route_match = $this->routeMatch;
     }

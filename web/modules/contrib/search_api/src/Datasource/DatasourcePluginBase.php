@@ -98,7 +98,7 @@ abstract class DatasourcePluginBase extends IndexPluginBase implements Datasourc
   /**
    * {@inheritdoc}
    */
-  public function checkItemAccess(ComplexDataInterface $item, AccountInterface $account = NULL) {
+  public function checkItemAccess(ComplexDataInterface $item, ?AccountInterface $account = NULL) {
     @trigger_error('\Drupal\search_api\Datasource\DatasourceInterface::checkItemAccess() is deprecated in search_api:8.x-1.14 and is removed from search_api:2.0.0. Use getItemAccessResult() instead. See https://www.drupal.org/node/3051902', E_USER_DEPRECATED);
     return $this->getItemAccessResult($item, $account)->isAllowed();
   }
@@ -106,7 +106,7 @@ abstract class DatasourcePluginBase extends IndexPluginBase implements Datasourc
   /**
    * {@inheritdoc}
    */
-  public function getItemAccessResult(ComplexDataInterface $item, AccountInterface $account = NULL) {
+  public function getItemAccessResult(ComplexDataInterface $item, ?AccountInterface $account = NULL) {
     return AccessResult::allowed();
   }
 
@@ -168,7 +168,7 @@ abstract class DatasourcePluginBase extends IndexPluginBase implements Datasourc
   /**
    * {@inheritdoc}
    */
-  public function getAffectedItemsForEntityChange(EntityInterface $entity, array $foreign_entity_relationship_map, EntityInterface $original_entity = NULL): array {
+  public function getAffectedItemsForEntityChange(EntityInterface $entity, array $foreign_entity_relationship_map, ?EntityInterface $original_entity = NULL): array {
     return [];
   }
 

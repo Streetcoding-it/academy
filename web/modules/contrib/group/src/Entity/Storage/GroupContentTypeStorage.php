@@ -138,7 +138,7 @@ class GroupContentTypeStorage extends ConfigEntityStorage implements GroupConten
   /**
    * {@inheritdoc}
    */
-  public function resetCache(array $ids = NULL) {
+  public function resetCache(?array $ids = NULL) {
     parent::resetCache($ids);
     $this->byEntityTypeCache = [];
   }

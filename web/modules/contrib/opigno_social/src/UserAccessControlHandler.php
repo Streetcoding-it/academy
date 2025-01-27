@@ -18,7 +18,7 @@ class UserAccessControlHandler extends UserAccessControlHandlerBase {
   /**
    * {@inheritdoc}
    */
-  protected function checkFieldAccess($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
+  protected function checkFieldAccess($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, ?FieldItemListInterface $items = NULL) {
     // The "email" field is available only for users who have the administer
     // permission, but it should be possible to use it in the view filter.
     if ($field_definition->getName() === 'mail' && $operation === 'view') {

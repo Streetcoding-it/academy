@@ -442,7 +442,7 @@ function _search_api_views_handler_mapping() {
  * @throws \Drupal\search_api\SearchApiException
  *   Thrown if the field's data definition could not be retrieved.
  */
-function _search_api_views_handler_adjustments($type, FieldInterface $field, array &$definitions, string $sub_type = NULL) {
+function _search_api_views_handler_adjustments($type, FieldInterface $field, array &$definitions, ?string $sub_type = NULL) {
   // By default, all fields can be empty (or at least have to be treated that
   // way by the Search API).
   if (!isset($definitions['filter']['allow empty'])) {

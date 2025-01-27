@@ -280,7 +280,7 @@ interface IndexInterface extends ConfigEntityInterface {
    *
    * @return $this
    */
-  public function setServer(ServerInterface $server = NULL);
+  public function setServer(?ServerInterface $server = NULL);
 
   /**
    * Retrieves this index's processors.

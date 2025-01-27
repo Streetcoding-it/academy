@@ -19,7 +19,7 @@ class OpignoGroupMembershipStatus extends InOperator {
   /**
    * {@inheritdoc}
    */
-  public function init(ViewExecutable $view, DisplayPluginBase $display, array &$options = NULL) {
+  public function init(ViewExecutable $view, DisplayPluginBase $display, ?array &$options = NULL) {
     parent::init($view, $display, $options);
     $this->valueTitle = t('Group Membership Status');
     $this->tableAlias = 'opigno_learning_path_group_user_status';

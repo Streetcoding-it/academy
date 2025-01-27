@@ -267,7 +267,7 @@ class SearchApiQuery extends QueryPluginBase {
   /**
    * {@inheritdoc}
    */
-  public function init(ViewExecutable $view, DisplayPluginBase $display, array &$options = NULL) {
+  public function init(ViewExecutable $view, DisplayPluginBase $display, ?array &$options = NULL) {
     try {
       parent::init($view, $display, $options);
       $this->index = static::getIndexFromTable($view->storage->get('base_table'));
@@ -951,7 +951,7 @@ class SearchApiQuery extends QueryPluginBase {
    *
    * @see \Drupal\search_api\Query\QueryInterface::setLanguages()
    */
-  public function setLanguages(array $languages = NULL) {
+  public function setLanguages(?array $languages = NULL) {
     if (!$this->shouldAbort()) {
       $this->query->setLanguages($languages);
     }
@@ -1030,7 +1030,7 @@ class SearchApiQuery extends QueryPluginBase {
    *
    * @see \Drupal\search_api\Query\QueryInterface::setFulltextFields()
    */
-  public function setFulltextFields(array $fields = NULL) {
+  public function setFulltextFields(?array $fields = NULL) {
     if (!$this->shouldAbort()) {
       $this->query->setFulltextFields($fields);
     }

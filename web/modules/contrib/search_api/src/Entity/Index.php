@@ -520,7 +520,7 @@ class Index extends ConfigEntityBase implements IndexInterface {
   /**
    * {@inheritdoc}
    */
-  public function setServer(ServerInterface $server = NULL) {
+  public function setServer(?ServerInterface $server = NULL) {
     $this->serverInstance = $server;
     $this->server = $server?->id();
     return $this;

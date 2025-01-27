@@ -77,14 +77,14 @@ class ServerTaskManager implements ServerTaskManagerInterface, EventSubscriberIn
   /**
    * {@inheritdoc}
    */
-  public function getCount(ServerInterface $server = NULL) {
+  public function getCount(?ServerInterface $server = NULL) {
     return $this->taskManager->getTasksCount($this->getTaskConditions($server));
   }
 
   /**
    * {@inheritdoc}
    */
-  public function execute(ServerInterface $server = NULL) {
+  public function execute(?ServerInterface $server = NULL) {
     if ($server && !$server->status()) {
       return FALSE;
     }
@@ -182,14 +182,14 @@ class ServerTaskManager implements ServerTaskManagerInterface, EventSubscriberIn
   /**
    * {@inheritdoc}
    */
-  public function setExecuteBatch(ServerInterface $server = NULL) {
+  public function setExecuteBatch(?ServerInterface $server = NULL) {
     $this->taskManager->setTasksBatch($this->getTaskConditions($server));
   }
 
   /**
    * {@inheritdoc}
    */
-  public function delete(ServerInterface $server = NULL, $index = NULL, array $types = NULL) {
+  public function delete(?ServerInterface $server = NULL, $index = NULL, ?array $types = NULL) {
     $conditions = $this->getTaskConditions($server);
     if ($index !== NULL) {
       $conditions['index_id'] = $index instanceof IndexInterface ? $index->id() : $index;
@@ -209,7 +209,7 @@ class ServerTaskManager implements ServerTaskManagerInterface, EventSubscriberIn
    * @return array
    *   An array of conditions to pass to the Search API task manager.
    */
-  protected function getTaskConditions(ServerInterface $server = NULL) {
+  protected function getTaskConditions(?ServerInterface $server = NULL) {
     $conditions['type'] = static::getSupportedTypes();
     if ($server) {
       $conditions['server_id'] = $server->id();

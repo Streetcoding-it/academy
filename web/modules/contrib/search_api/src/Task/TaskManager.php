@@ -133,7 +133,7 @@ class TaskManager implements TaskManagerInterface {
   /**
    * {@inheritdoc}
    */
-  public function addTask($type, ServerInterface $server = NULL, IndexInterface $index = NULL, $data = NULL) {
+  public function addTask($type, ?ServerInterface $server = NULL, ?IndexInterface $index = NULL, $data = NULL) {
     $server_id = $server?->id();
     $index_id = $index?->id();
     if (isset($data)) {
